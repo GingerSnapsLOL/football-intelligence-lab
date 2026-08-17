@@ -121,7 +121,7 @@ Hold-out comparison from the executed `03_xg_models.ipynb` (one **group-by-match
 
 On this extract the contextual logistic is the strongest *in-repo* model on log loss and Brier; trees do not automatically win a small, low-cardinality tabular problem. The vendor xG uses information this project does not.
 
-**Served artifacts** (what FastAPI loads today) are `logistic_baseline` and `logistic_contextual` under `artifacts/shot_goal_probability/`. Boosting libraries are implemented and tested; their fitted files are not currently persisted for the API.
+**Served artifacts** live under `artifacts/shot_goal_probability/`. `make train` writes logistic, XGBoost, LightGBM and CatBoost contextual (and logistic baseline) joblib files that FastAPI lists on `/api/models`.
 
 ## Validation and leakage
 
@@ -271,7 +271,7 @@ Python **≥ 3.12** and [uv](https://docs.astral.sh/uv/). Docker demo: `docker c
 
 Other targets: `format`, `lint`, `typecheck`, `test`, `data`, `data-list`, `process`, `queries`, `features`, `diagnostics`, `comparisons`, `bootstrap`, `permutation`, `api`, `frontend`, `docker-up`, `docker-down`.
 
-The Makefile also has `train` (`python -m football_intelligence.models.logistic`). That module currently has **no CLI** and does not write artifacts; do not rely on it to populate `artifacts/`.
+The Makefile also has `train` (`python -m football_intelligence.models.train`), which fits logistic and boosting models on a match-grouped split and writes `artifacts/`.
 
 ## Testing
 
@@ -311,7 +311,7 @@ The current run of that suite collects and passes **487** tests. Coverage is mea
 - No tracking / SkillCorner data.
 - No causal claims from xG coefficients, SHAP-style values, or player effects.
 - Bayesian work is a small notebook, not a production hierarchical finishing model.
-- API currently serves logistic artifacts only.
+- API currently serves whatever complete artifacts are on disk; run `make train` to persist boosting models as well as logistic.
 - Boosting vs logistic comparison is a single grouped hold-out, not nested cross-validation.
 - No dedicated calibration-curve / reliability module yet.
 

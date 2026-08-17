@@ -59,7 +59,7 @@ permutation: ## Permutation tests under row-level and cluster-level exchangeabil
 	uv run python -m football_intelligence.statistics.permutation
 
 train: ## Train xG models and write artifacts (does not start the API)
-	uv run python -m football_intelligence.models.logistic
+	uv run python -m football_intelligence.models.train
 
 api: ## Start the FastAPI server on http://127.0.0.1:8000
 	uv run uvicorn football_intelligence.api.app:app --reload --host 127.0.0.1 --port 8000

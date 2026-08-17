@@ -1,0 +1,70 @@
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000101",
+    "index": 1,
+    "period": 1,
+    "timestamp": "00:00:05.000",
+    "minute": 0,
+    "second": 5,
+    "type": {"id": 30, "name": "Pass"},
+    "team": {"id": 12, "name": "Gamma FC"},
+    "player": {"id": 303, "name": "Player Four"},
+    "location": [50.0, 40.0],
+    "pass": {"length": 20.0, "end_location": [70.0, 40.0]}
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000102",
+    "index": 2,
+    "period": 2,
+    "timestamp": "00:10:00.000",
+    "minute": 55,
+    "second": 0,
+    "type": {"id": 17, "name": "Pressure"},
+    "team": {"id": 10, "name": "Alpha FC"},
+    "player": {"id": 102, "name": "Player Reserve"},
+    "location": [70.0, 30.0]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000103",
+    "index": 3,
+    "period": 2,
+    "timestamp": "00:20:00.000",
+    "minute": 65,
+    "second": 0,
+    "type": {"id": 16, "name": "Shot"},
+    "team": {"id": 12, "name": "Gamma FC"},
+    "player": {"id": 303, "name": "Player Four"},
+    "position": {"id": 23, "name": "Center Forward"},
+    "location": [112.0, 40.0],
+    "shot": {
+      "statsbomb_xg": 0.55,
+      "end_location": [120.0, 40.0, 1.0],
+      "outcome": {"id": 97, "name": "Goal"},
+      "body_part": {"id": 38, "name": "Left Foot"},
+      "technique": {"id": 93, "name": "Normal"},
+      "type": {"id": 87, "name": "Open Play"},
+      "freeze_frame": []
+    }
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000104",
+    "index": 4,
+    "period": 5,
+    "timestamp": "00:01:00.000",
+    "minute": 121,
+    "second": 0,
+    "type": {"id": 16, "name": "Shot"},
+    "team": {"id": 10, "name": "Alpha FC"},
+    "player": {"id": 101, "name": "Player One Fullname"},
+    "position": {"id": 23, "name": "Center Forward"},
+    "location": [108.0, 40.0],
+    "shot": {
+      "statsbomb_xg": 0.7835,
+      "end_location": [120.0, 38.0, 0.8],
+      "outcome": {"id": 97, "name": "Goal"},
+      "body_part": {"id": 40, "name": "Right Foot"},
+      "technique": {"id": 93, "name": "Normal"},
+      "type": {"id": 88, "name": "Penalty"}
+    }
+  }
+]

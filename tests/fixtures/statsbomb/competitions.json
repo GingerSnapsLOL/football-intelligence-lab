@@ -1,0 +1,16 @@
+[
+  {
+    "competition_id": 900,
+    "season_id": 1,
+    "competition_name": "Fixture Cup",
+    "season_name": "2018",
+    "competition_gender": "male",
+    "country_name": "Testland"
+  },
+  {
+    "competition_id": 901,
+    "season_id": 2,
+    "competition_name": "Fixture League",
+    "season_name": "2019/2020"
+  }
+]

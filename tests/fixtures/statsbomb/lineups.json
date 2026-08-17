@@ -1,0 +1,38 @@
+[
+  {
+    "team_id": 10,
+    "team_name": "Alpha FC",
+    "lineup": [
+      {
+        "player_id": 101,
+        "player_name": "Player One Fullname",
+        "player_nickname": "Player One",
+        "jersey_number": 9,
+        "country": {"id": 1, "name": "Testland"},
+        "positions": [
+          {"position_id": 23, "position": "Center Forward", "from": "00:00", "to": null}
+        ],
+        "cards": []
+      },
+      {
+        "player_id": 102,
+        "player_name": "Player Reserve",
+        "player_nickname": null,
+        "jersey_number": 17,
+        "positions": [],
+        "cards": []
+      }
+    ]
+  },
+  {
+    "team_id": 11,
+    "team_name": "Beta FC",
+    "lineup": [
+      {
+        "player_id": 202,
+        "player_name": "Player Three",
+        "jersey_number": 11
+      }
+    ]
+  }
+]

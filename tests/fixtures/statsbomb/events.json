@@ -1,0 +1,84 @@
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "index": 1,
+    "period": 1,
+    "timestamp": "00:00:00.000",
+    "minute": 0,
+    "second": 0,
+    "type": {"id": 35, "name": "Starting XI"},
+    "team": {"id": 10, "name": "Alpha FC"}
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000002",
+    "index": 2,
+    "period": 1,
+    "timestamp": "00:00:31.000",
+    "minute": 0,
+    "second": 31,
+    "type": {"id": 30, "name": "Pass"},
+    "team": {"id": 10, "name": "Alpha FC"},
+    "player": {"id": 101, "name": "Player One"},
+    "location": [60.0, 40.0],
+    "pass": {"length": 12.5, "end_location": [72.0, 44.0]}
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000003",
+    "index": 3,
+    "period": 1,
+    "timestamp": "00:01:12.000",
+    "minute": 1,
+    "second": 12,
+    "type": {"id": 16, "name": "Shot"},
+    "team": {"id": 10, "name": "Alpha FC"},
+    "player": {"id": 101, "name": "Player One"},
+    "position": {"id": 23, "name": "Center Forward"},
+    "location": [110.0, 40.0],
+    "under_pressure": true,
+    "shot": {
+      "statsbomb_xg": 0.42,
+      "end_location": [120.0, 40.0, 0.5],
+      "outcome": {"id": 97, "name": "Goal"},
+      "body_part": {"id": 40, "name": "Right Foot"},
+      "technique": {"id": 93, "name": "Normal"},
+      "type": {"id": 87, "name": "Open Play"},
+      "first_time": true,
+      "freeze_frame": [
+        {
+          "location": [113.0, 42.0],
+          "player": {"id": 201, "name": "Player Two"},
+          "position": {"id": 3, "name": "Right Center Back"},
+          "teammate": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000004",
+    "index": 4,
+    "period": 2,
+    "timestamp": "00:12:03.000",
+    "minute": 57,
+    "second": 3,
+    "type": {"id": 16, "name": "Shot"},
+    "team": {"id": 11, "name": "Beta FC"},
+    "player": {"id": 202, "name": "Player Three"},
+    "location": [95.0, 25.0],
+    "shot": {
+      "statsbomb_xg": 0.03,
+      "end_location": [120.0, 36.0],
+      "outcome": {"id": 98, "name": "Off T"},
+      "body_part": {"id": 38, "name": "Left Foot"},
+      "type": {"id": 87, "name": "Open Play"}
+    }
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000005",
+    "index": 5,
+    "period": 2,
+    "timestamp": "00:20:00.000",
+    "minute": 65,
+    "second": 0,
+    "team": {"id": 11, "name": "Beta FC"}
+  }
+]

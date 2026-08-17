@@ -5,12 +5,14 @@ description = "Football match and event data intelligence lab"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "arviz>=0.23.4",
     "catboost>=1.2.10",
     "duckdb>=1.5.5",
     "fastapi>=0.141.1",
     "lightgbm>=4.7.0",
     "pandas>=3.0.5",
     "pyarrow>=25.0.1",
+    "pymc>=5.28.5",
     "scikit-learn>=1.9.0",
     "scipy>=1.18.0",
     "statsmodels>=0.14.6",

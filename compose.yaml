@@ -1,0 +1,46 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      FOOTBALL_PROCESSED_ROOT: /app/data/processed
+      FOOTBALL_ARTIFACTS_ROOT: /app/artifacts
+      FOOTBALL_CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    volumes:
+      - ./data/processed:/app/data/processed:ro
+      - ./artifacts:/app/artifacts:ro
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 45s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      API_PROXY_TARGET: http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:5173/').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 15s
+    restart: unless-stopped

@@ -5,11 +5,17 @@ description = "Football match and event data intelligence lab"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "catboost>=1.2.10",
     "duckdb>=1.5.5",
+    "fastapi>=0.141.1",
+    "lightgbm>=4.7.0",
     "pandas>=3.0.5",
     "pyarrow>=25.0.1",
+    "scikit-learn>=1.9.0",
     "scipy>=1.18.0",
     "statsmodels>=0.14.6",
+    "uvicorn>=0.52.3",
+    "xgboost>=3.4.1",
 ]
 
 [build-system]
@@ -32,6 +38,7 @@ dev = [
     "matplotlib>=3.11.1",
     "pandas-stubs>=3.0.5.260730",
     "scipy-stubs>=1.18.0.1",
+    "httpx>=0.28.1",
 ]
 
 [tool.ruff]
@@ -90,4 +97,20 @@ branch = true
 # statsmodels ships no type information and has no stubs package. The import is
 # confined to welch_anova, whose result is immediately converted to floats.
 module = ["statsmodels.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# scikit-learn ships no type information either. Everything it returns is
+# converted to a concrete type at the boundary of the model and metric modules.
+module = ["sklearn.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# joblib is used only to serialise fitted sklearn pipelines.
+module = ["joblib"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# CatBoost ships no type information and has no stubs package.
+module = ["catboost", "catboost.*"]
 ignore_missing_imports = true

@@ -2,6 +2,25 @@
 
 Data and modelling toolkit for football match and event analysis.
 
+## Quick start
+
+Development:
+
+```bash
+make api
+make frontend
+```
+
+Docker:
+
+```bash
+docker compose up --build
+```
+
+Bind-mounts local `data/processed/` and `artifacts/` (no training on startup).
+
+UI: http://localhost:5173 · API: http://localhost:8000
+
 ## Requirements
 
 - Python >= 3.12
@@ -35,6 +54,10 @@ make data      # download the StatsBomb development dataset (~350 MB)
 | `comparisons` | Run the two-sample and contingency test demos    |
 | `bootstrap` | Bootstrap football quantities by resampling unit   |
 | `permutation` | Permutation tests by exchangeability unit        |
+| `api`         | Start FastAPI on :8000                            |
+| `frontend`    | Start the Vite UI on :5173                        |
+| `docker-up`   | `docker compose up --build`                       |
+| `docker-down` | `docker compose down`                             |
 
 ## Data
 

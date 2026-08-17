@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help install format lint typecheck test check notebook data data-list process queries features diagnostics comparisons bootstrap permutation
+.PHONY: help install format lint typecheck test check notebook data data-list process queries features diagnostics comparisons bootstrap permutation train api frontend docker-up docker-down
 
 # Extra arguments for the acquisition command, e.g.
 #   make data DATA_ARGS="--competition-season 11/27 --limit-matches 5"
@@ -57,3 +57,19 @@ bootstrap: ## Bootstrap football quantities under different resampling units
 
 permutation: ## Permutation tests under row-level and cluster-level exchangeability
 	uv run python -m football_intelligence.statistics.permutation
+
+train: ## Train xG models and write artifacts (does not start the API)
+	uv run python -m football_intelligence.models.logistic
+
+api: ## Start the FastAPI server on http://127.0.0.1:8000
+	uv run uvicorn football_intelligence.api.app:app --reload --host 127.0.0.1 --port 8000
+
+frontend: ## Start the Vite frontend (expects the API on :8000)
+	@test -d frontend/node_modules || (cd frontend && npm install)
+	cd frontend && npm run dev
+
+docker-up: ## Build and start the Docker demo stack
+	docker compose up --build
+
+docker-down: ## Stop the Docker demo stack
+	docker compose down
